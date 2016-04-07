@@ -5,6 +5,3 @@ before_build:
 build:
   project: CSharpMonad.sln
   verbosity: minimal
-#test:
-#  assemblies:
-#    - '**\*.dll'
