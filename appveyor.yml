@@ -28,13 +28,13 @@ after_build:
 test: off
 
 artifacts:
-  - path: CSharpMonad\lib\Monad.dll
+  - path: CSharpMonad\lib
     name: dll
     type: zip
 
 deploy:
   - provider: Environment
-    name: Agent
+    name: monad-repo
 
 notifications:
   - provider: Email
