@@ -30,7 +30,6 @@ test: off
 artifacts:
   - path: CSharpMonad\lib
     name: dll
-    type: zip
 
 deploy:
   - provider: Environment
