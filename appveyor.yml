@@ -7,8 +7,8 @@ build:
   verbosity: minimal
 configuration:
   - Release
+  - Debug
 test: off
 artifacts:
-  - path: CSharpMonad\bin\Release
+  - path: CSharpMonad\bin\Release\*.dll
     name: DLL
-    type: zip
