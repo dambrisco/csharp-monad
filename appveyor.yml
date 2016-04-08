@@ -5,8 +5,10 @@ before_build:
 build:
   project: CSharpMonad.sln
   verbosity: minimal
+configuration:
+  - Release
 test: off
 artifacts:
-  - path: CSharpMonad\lib
+  - path: CSharpMonad\bin\Release
     name: DLL
     type: zip
