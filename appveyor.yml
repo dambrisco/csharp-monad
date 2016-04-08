@@ -19,8 +19,12 @@ build:
   project: CSharpMonad.sln
   verbosity: minimal
 
-deploy_script:
+after_build:
   - curl --silent ifconfig.io
+
+deploy:
+  - provider: Environment
+    name: Agent
 
 configuration:
   - Release
