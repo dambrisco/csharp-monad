@@ -5,3 +5,7 @@ before_build:
 build:
   project: CSharpMonad.sln
   verbosity: minimal
+artifacts:
+  - path: CSharpMonad/lib
+    name: DLL
+    type: zip
