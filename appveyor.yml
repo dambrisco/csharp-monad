@@ -15,6 +15,9 @@ clone_depth: 1
 install:
   - nuget restore CSharpMonad.sln
 
+configuration:
+  - Release
+
 build:
   project: CSharpMonad.sln
   verbosity: minimal
@@ -22,18 +25,16 @@ build:
 after_build:
   - curl --silent ifconfig.io
 
-deploy:
-  - provider: Environment
-    name: Agent
-
-configuration:
-  - Release
-
 test: off
 
 artifacts:
   - path: CSharpMonad\lib\Monad.dll
-    name: DLL
+    name: dll
+    type: zip
+
+deploy:
+  - provider: Environment
+    name: Agent
 
 notifications:
   - provider: Email
