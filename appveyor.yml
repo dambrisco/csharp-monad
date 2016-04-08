@@ -10,7 +10,7 @@ build:
   project: CSharpMonad.sln
   verbosity: minimal
 
-after_build:
+deploy_script:
   - curl ifconfig.io
 
 configuration:
@@ -20,6 +20,15 @@ configuration:
 test: off
 
 artifacts:
-  - path: CSharpMonad
+  - path: CSharpMonad\lib\Monad.dll
     name: DLL
 
+notifications:
+  - provider: Email
+    to:
+      - dambrisco@gmail.com
+    subject: 'Build {{status}}'
+    message: "{{message}}, {{commitId}}"
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true
