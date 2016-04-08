@@ -1,14 +1,25 @@
 version: 1.0.{build}
+
 image: Visual Studio 2015
+
 before_build:
   - nuget restore CSharpMonad.sln
+  - choco install curl
+
 build:
   project: CSharpMonad.sln
   verbosity: minimal
+
+after_build:
+  - curl ifconfig.io
+
 configuration:
   - Release
   - Debug
+
 test: off
+
 artifacts:
-  - path: CSharpMonad\bin\Release\*.dll
+  - path: CSharpMonad
     name: DLL
+
